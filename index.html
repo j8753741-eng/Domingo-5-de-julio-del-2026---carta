@@ -1,257 +1,211 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>En esta noche de domingo</title>
+<title>Crónicas de Nuestro Amor</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
 
 *{
+
 margin:0;
 padding:0;
 box-sizing:border-box;
-}
 
-html{
-scroll-behavior:smooth;
 }
 
 body{
 
-font-family:'Montserrat',sans-serif;
-
 background:
-radial-gradient(circle at top,#53347e 0%,#2b1a46 35%,#140d22 70%,#09070f 100%);
-
-color:#f6f2ff;
-
-overflow-x:hidden;
+radial-gradient(circle at center,#5c4327 0%,#352112 45%,#170d08 100%);
 
 min-height:100vh;
 
-position:relative;
+font-family:'Cormorant Garamond',serif;
+
+padding:60px 20px;
+
+overflow-x:hidden;
 
 }
 
-/*==============================
-ESTRELLAS
-==============================*/
+/* Mesa */
 
-.stars{
+body::before{
+
+content:"";
 
 position:fixed;
 
 inset:0;
 
+background:
+
+repeating-linear-gradient(
+90deg,
+rgba(255,255,255,.015),
+rgba(255,255,255,.015) 3px,
+transparent 3px,
+transparent 80px
+);
+
+opacity:.35;
+
 pointer-events:none;
 
-z-index:-5;
-
-background-image:
-
-radial-gradient(white 1px,transparent 1px),
-radial-gradient(#dcb7ff 1px,transparent 1px);
-
-background-size:90px 90px,140px 140px;
-
-background-position:0 0,40px 60px;
-
-opacity:.55;
-
 }
 
-/*==============================
-LUNA
-==============================*/
+/* Libro */
 
-.moon{
+.book{
 
-position:fixed;
+max-width:950px;
 
-top:55px;
-right:65px;
+margin:auto;
 
-width:140px;
-height:140px;
+background:#4b2816;
 
-border-radius:50%;
+border-radius:18px;
 
-background:
-radial-gradient(circle,#fffdfc,#f0e8ff 70%,#ceb7ff);
+padding:28px;
 
 box-shadow:
 
-0 0 40px white,
-0 0 90px #c682ff,
-0 0 180px rgba(198,130,255,.45);
+0 25px 60px rgba(0,0,0,.65);
 
-animation:moon 6s ease-in-out infinite;
-
-z-index:-4;
-
-}
-
-@keyframes moon{
-
-50%{
-
-transform:translateY(-10px);
-
-}
-
-}
-
-/*==============================
-AURORA
-==============================*/
-
-.aurora{
-
-position:fixed;
-
-top:-220px;
-left:-220px;
-
-width:700px;
-height:700px;
-
-border-radius:50%;
-
-background:
-
-radial-gradient(circle,
-rgba(198,120,255,.22),
-transparent 70%);
-
-filter:blur(35px);
-
-animation:aurora 16s ease-in-out infinite alternate;
-
-z-index:-5;
-
-}
-
-@keyframes aurora{
-
-to{
-
-transform:
-translate(90px,40px)
-rotate(20deg);
-
-}
-
-}
-
-/*==============================
-CONTENEDOR
-==============================*/
-
-.container{
-
-width:min(920px,92%);
-
-margin:70px auto;
-
-background:
-
-rgba(255,255,255,.09);
-
-backdrop-filter:blur(18px);
-
-border-radius:34px;
-
-border:1px solid rgba(255,255,255,.15);
-
-padding:70px 70px 60px;
-
-box-shadow:
-
-0 20px 70px rgba(0,0,0,.45);
+border:6px solid #8f693d;
 
 position:relative;
 
-overflow:hidden;
+}
+
+/* Grabado dorado */
+
+.cover-title{
+
+text-align:center;
+
+font-family:'Cinzel',serif;
+
+font-size:2rem;
+
+color:#f7d98d;
+
+letter-spacing:3px;
+
+text-shadow:
+
+0 2px 0 #7b582c,
+0 0 12px rgba(255,217,141,.35);
+
+margin-bottom:22px;
 
 }
 
-.container::before{
+/* Página */
+
+.page{
+
+background:
+
+linear-gradient(#f9f0d9,#efe1bf);
+
+border-radius:10px;
+
+padding:65px;
+
+position:relative;
+
+box-shadow:
+
+inset 0 0 30px rgba(0,0,0,.12);
+
+}
+
+/* Textura */
+
+.page::before{
 
 content:"";
 
 position:absolute;
 
-top:-160px;
-right:-140px;
+inset:0;
 
-width:320px;
-height:320px;
+background-image:
 
-border-radius:50%;
+radial-gradient(rgba(90,70,40,.05) 1px,transparent 1px);
 
-background:
+background-size:18px 18px;
 
-radial-gradient(circle,
-rgba(255,255,255,.18),
-transparent 70%);
+opacity:.55;
+
+pointer-events:none;
 
 }
 
-/*==============================
-ORNAMENTOS
-==============================*/
+/* Filigranas */
 
 .corner{
 
 position:absolute;
 
-font-size:34px;
+font-size:44px;
 
-opacity:.65;
+color:#b08a45;
 
-}
-
-.corner.one{
-
-top:25px;
-left:28px;
+opacity:.7;
 
 }
 
-.corner.two{
+.c1{
 
-top:25px;
-right:28px;
-
-}
-
-.corner.three{
-
-bottom:25px;
-left:28px;
+top:15px;
+left:22px;
 
 }
 
-.corner.four{
+.c2{
 
-bottom:25px;
-right:28px;
+top:15px;
+right:22px;
+
+transform:rotate(90deg);
 
 }
 
-/*==============================
-ENCABEZADO
-==============================*/
+.c3{
 
-header{
+bottom:15px;
+left:22px;
+
+transform:rotate(-90deg);
+
+}
+
+.c4{
+
+bottom:15px;
+right:22px;
+
+transform:rotate(180deg);
+
+}
+
+/* Encabezado */
+
+.header{
 
 text-align:center;
 
@@ -259,117 +213,67 @@ margin-bottom:55px;
 
 }
 
-header .heart{
-
-font-size:50px;
-
-margin-bottom:15px;
-
-animation:pulse 2.8s infinite;
-
-}
-
-@keyframes pulse{
-
-50%{
-
-transform:scale(1.15);
-
-}
-
-}
-
-header h1{
+.header h1{
 
 font-family:'Cinzel',serif;
 
-font-size:2.2rem;
+font-size:2rem;
 
-line-height:1.45;
+line-height:1.5;
 
-color:white;
+color:#5b3213;
 
-text-shadow:
-
-0 0 18px #c97cff;
-
-margin-bottom:25px;
+margin-bottom:22px;
 
 }
 
 .date{
 
-display:inline-block;
+font-size:1rem;
 
-padding:11px 26px;
+color:#7b5c2e;
 
-border-radius:40px;
-
-background:rgba(185,120,255,.12);
-
-border:1px solid rgba(255,255,255,.16);
-
-font-size:.95rem;
+letter-spacing:1px;
 
 }
 
-/*==============================
-SALUDO
-==============================*/
+/* Saludo */
 
 .greeting{
+
+margin-top:35px;
 
 font-family:'Great Vibes',cursive;
 
 font-size:3rem;
 
-text-align:left;
+color:#7b4323;
 
-color:#ffdfff;
-
-margin-bottom:35px;
-
-text-shadow:
-
-0 0 18px rgba(255,180,255,.6);
+margin-bottom:28px;
 
 }
 
-/*==============================
-PÁRRAFOS
-==============================*/
+/* Texto */
 
 p{
 
-font-size:1.12rem;
+font-size:1.35rem;
 
-line-height:2.1;
+line-height:2.05;
 
 text-align:justify;
 
+color:#4d3520;
+
 margin-bottom:22px;
 
-color:#f6f3ff;
-
 }
 
-strong{
+/* Letra capital */
 
-font-weight:700;
+.first::first-letter{
 
-color:white;
-
-}
-
-/*==============================
-LETRA CAPITAL
-==============================*/
-
-.first-letter::first-letter{
-
-font-family:'Cormorant Garamond',serif;
-
-font-size:4.8rem;
+font-size:5rem;
 
 float:left;
 
@@ -377,86 +281,63 @@ line-height:.9;
 
 padding-right:10px;
 
-padding-top:8px;
+font-family:'Cinzel',serif;
 
-color:#f8d5ff;
-
-text-shadow:
-
-0 0 18px #cb81ff;
+color:#8d5a2d;
 
 }
 
-/*==============================
-SEPARADOR
-==============================*/
+strong{
+
+font-weight:700;
+
+}
 
 .divider{
 
-display:flex;
+text-align:center;
 
-justify-content:center;
+font-size:26px;
 
-align-items:center;
+margin:35px 0;
 
-margin:40px 0;
-
-}
-
-.divider::before,
-.divider::after{
-
-content:"";
-
-height:1px;
-
-width:180px;
-
-background:
-
-linear-gradient(to right,
-transparent,
-#cf92ff,
-transparent);
+color:#9b7643;
 
 }
 
-.divider span{
-
-margin:0 18px;
-
-font-size:22px;
-
-}
 </style>
 
 </head>
 
 <body>
 
-<div class="stars"></div>
+<div class="book">
 
-<div class="aurora"></div>
+<div class="cover-title">
 
-<div class="moon"></div>
+✦ LIBRO DE NUESTRO AMOR ✦
 
-<div class="container">
+</div>
 
-<div class="corner one">❀</div>
-<div class="corner two">❀</div>
-<div class="corner three">❀</div>
-<div class="corner four">❀</div>
+<div class="page">
 
-<header>
+<div class="corner c1">❦</div>
+<div class="corner c2">❦</div>
+<div class="corner c3">❦</div>
+<div class="corner c4">❦</div>
 
-<div class="heart">💜</div>
+<div class="header">
 
 <h1>
 
 <strong>
+
 EN ESTA NOCHE DE DOMINGO,<br>
+
 MI ÚNICO LUGAR FAVORITO<br>
+
 SIGUE SIENDO A TU LADO
+
 </strong>
 
 </h1>
@@ -467,7 +348,7 @@ SIGUE SIENDO A TU LADO
 
 </div>
 
-</header>
+</div>
 
 <div class="greeting">
 
@@ -475,232 +356,355 @@ SIGUE SIENDO A TU LADO
 
 </div>
 
-<p class="first-letter">
+<p class="first">
+
 Esta noche, mientras recuerdo cada instante que vivimos hoy, solo puedo sonreír. Quizá para muchas personas haya sido una salida sencilla: una película, algo para comer y unas cuantas horas compartidas. Pero para mí fue mucho más que eso. Fue otro recuerdo contigo, otro pedacito de vida que guardaré con muchísimo cariño.
+
 </p>
 
 <p>
+
 Me gustó verte disfrutar, escuchar tu voz, sentir tu presencia tan cerca de la mía. Y aunque en algunos momentos pensé que todo podría haber sido todavía más especial, no quiero que eso opaque lo verdaderamente importante: tuve el privilegio de pasar el día junto a la mujer que amo.
+
 </p>
 
 <p>
+
 Hubo un momento que se quedó grabado en mi corazón. Poder acariciar suavemente tu pierna, sentir la calidez de tu piel y saber que estabas ahí conmigo hizo que mi corazón latiera con una intensidad difícil de explicar. No voy a negar que mi corazón también deseaba abrazarte de una manera aún más cercana, perderme un poco más en ti y recorrer con ternura esos rincones tuyos que tanto me enamoran. Pero entendí que no siempre se puede tener todo lo que uno desea, y está bien.
+
 </p>
 
 <div class="divider">
-<span>🤍</span>
-</div>
+
+❦ ❧ ❦
+
+  </div>
+
+
 <p>
+
 Porque si algo he aprendido contigo es que el amor también sabe esperar. El deseo que siento por ti no desaparece cuando no puede cumplirse; al contrario, se transforma en ilusión, en paciencia y en más ganas de seguir construyendo momentos hermosos contigo. Sé que llegarán muchas otras noches, muchas otras citas y muchísimas oportunidades para seguir descubriéndonos poco a poco.
+
 </p>
 
 <p>
+
 Hoy confirmé algo que ya sabía: no necesito un plan extraordinario para ser feliz. Si tú estás conmigo, incluso el silencio se vuelve un recuerdo precioso. Una película puede convertirse en la mejor experiencia simplemente porque mi mano puede buscar la tuya, porque puedo mirar de reojo a la mujer que hace que mis días tengan un brillo diferente.
-</p>
 
-<p>
-Gracias por regalarme este domingo. Gracias por dejarme acompañarte, por hacerme sentir afortunado de caminar a tu lado y por seguir despertando en mí un amor que cada día es más profundo, más intenso y más apasionado.
 </p>
 
 <div class="divider">
-<span>🌙</span>
+
+✦ ✧ ✦
+
 </div>
 
 <p>
-Espero que esta noche descanses con una sonrisa, porque mientras tú duermas, yo seguiré pensando en lo hermosa que eres, en lo mucho que te extraño incluso después de haber pasado el día contigo y en todas las historias maravillosas que aún nos faltan por vivir.
+
+Gracias por regalarme este domingo. Gracias por dejarme acompañarte, por hacerme sentir afortunado de caminar a tu lado y por seguir despertando en mí un amor que cada día es más profundo, más intenso y más apasionado.
+
 </p>
 
 <p>
-Te amo con toda mi alma, con todo mi corazón y con un deseo inmenso de seguir escribiendo nuestra historia, un domingo, una noche y un abrazo a la vez.
+
+Espero que esta noche descanses con una sonrisa, porque mientras tú duermas, yo seguiré pensando en lo hermosa que eres, en lo mucho que te extraño incluso después de haber pasado el día contigo y en todas las historias maravillosas que aún nos faltan por vivir.
+
 </p>
 
-<div style="margin-top:55px;text-align:right;">
+<p>
 
-<div style="
+Te amo con toda mi alma, con todo mi corazón y con un deseo inmenso de seguir escribiendo nuestra historia, un domingo, una noche y un abrazo a la vez.
+
+</p>
+
+<div style="margin-top:65px;">
+
+<p style="
 font-family:'Great Vibes',cursive;
-font-size:2.8rem;
-color:#ffe3ff;
-text-shadow:0 0 18px rgba(255,180,255,.55);
-margin-bottom:12px;
+font-size:2.7rem;
+color:#7b4323;
+text-align:right;
+margin-bottom:8px;
 ">
 
 <strong>Con todo mi amor,</strong>
 
-</div>
+</p>
 
-<div style="
-font-size:1.1rem;
-line-height:2;
-color:#f8f4ff;
-max-width:470px;
-margin-left:auto;
+<p style="
+font-size:1.3rem;
+line-height:1.9;
+text-align:right;
+color:#4d3520;
 ">
 
 <strong>
 Tu niño que siempre soñará con volver a perderse entre tus abrazos y encontrarse, una y otra vez, en tu corazón. ❤️
 </strong>
 
-</div>
+</p>
 
 </div>
 
-<div class="divider">
-<span>💜</span>
-</div>
+<hr style="
+margin:55px auto;
+width:82%;
+border:none;
+border-top:1px solid rgba(120,85,40,.35);
+">
 
 <style>
 
-/*=========================================
-FRASE FINAL EN NEÓN
-=========================================*/
+/*==========================
+GRABADO FINAL
+==========================*/
 
-.neon-love{
+.book-quote{
 
-margin:55px auto 45px;
+margin:0 auto 55px;
 
 max-width:760px;
 
-padding:30px;
+padding:28px 36px;
+
+border:2px solid rgba(176,138,69,.45);
+
+border-radius:10px;
+
+background:rgba(255,248,228,.45);
+
+position:relative;
+
+}
+
+.book-quote::before{
+
+content:"❦";
+
+position:absolute;
+
+top:-18px;
+left:50%;
+
+transform:translateX(-50%);
+
+background:#efe1bf;
+
+padding:0 14px;
+
+font-size:26px;
+
+color:#9b7643;
+
+}
+
+.book-quote p{
+
+margin:0;
 
 text-align:center;
+
+font-size:1.45rem;
+
+line-height:2;
+
+color:#6d3f72;
 
 font-family:'Cormorant Garamond',serif;
 
-font-size:1.65rem;
-
-line-height:1.9;
-
-color:#fdf7ff;
-
-background:rgba(173,103,255,.08);
-
-border:1px solid rgba(215,170,255,.18);
-
-border-radius:26px;
-
-box-shadow:
-0 0 20px rgba(171,92,255,.22),
-0 0 50px rgba(171,92,255,.15);
-
-animation:neon 3s ease-in-out infinite alternate;
-
-}
-
-@keyframes neon{
-
-from{
-
 text-shadow:
-0 0 6px #fff,
-0 0 12px #d79cff,
-0 0 24px #b96cff,
-0 0 38px #9d4dff;
 
-}
-
-to{
-
-text-shadow:
-0 0 10px #fff,
-0 0 22px #efcbff,
-0 0 42px #cb84ff,
-0 0 70px #963dff;
-
-}
-
-}
-
-/*=========================================
-BOTÓN
-=========================================*/
-
-.button-box{
-
-display:flex;
-
-justify-content:center;
-
-margin-top:25px;
-
-}
-
-.poem-btn{
-
-display:inline-flex;
-
-align-items:center;
-
-gap:12px;
-
-padding:18px 34px;
-
-border-radius:60px;
-
-text-decoration:none;
-
-font-family:'Montserrat',sans-serif;
-
-font-weight:600;
-
-font-size:1rem;
-
-color:#fff;
-
-background:linear-gradient(135deg,#7f3cff,#b55bff,#8c52ff);
-
-box-shadow:
-0 12px 35px rgba(146,70,255,.45);
-
-transition:.35s;
-
-}
-
-.poem-btn:hover{
-
-transform:translateY(-5px);
-
-box-shadow:
-0 18px 45px rgba(146,70,255,.65);
-
-}
-
-.footer{
-
-margin-top:45px;
-
-text-align:center;
-
-font-size:.92rem;
-
-color:#ddd1f5;
+0 0 6px rgba(171,92,255,.18);
 
 }
 
 </style>
 
-<div class="neon-love">
+<div class="book-quote">
+
+<p>
 
 <strong>
-Si esta noche tuviera que pedir un único deseo, no sería volver a ver una película, ni regresar a un lugar especial, ni detener el tiempo. Pediría seguir viviendo domingos como este, donde el mayor regalo sea contemplar tu sonrisa, sentir tu cercanía y descubrir que incluso los instantes más sencillos se convierten en recuerdos eternos cuando los vivo contigo. Porque mi verdadero destino nunca ha sido un lugar, sino el inmenso privilegio de caminar a tu lado, de esperarte cuando haga falta, de abrazarte cuando la vida lo permita y de seguir enamorándome de ti una y otra vez, hasta que cada latido pronuncie para siempre un solo nombre: <br><br>VALERIA PETRO VILLAZÓN.
+Y si algún día estas páginas vuelven a abrirse, deseo que cada palabra siga abrazando tu corazón como esta noche abrazó el mío. Que nunca olvides que los momentos más sencillos terminan siendo los más eternos cuando los vivimos juntos, y que mi lugar favorito jamás será un sitio, sino la inmensa fortuna de caminar contigo, cuidar de ti, esperar por ti y amarte con la misma intensidad con la que esta historia comenzó y con la que seguirá escribiéndose mientras exista un latido que pronuncie tu nombre, <br><br>VALERIA PETRO VILLAZÓN.
 </strong>
+
+</p>
 
 </div>
 
-<div class="button-box">
 
-<a href="https://j8753741-eng.github.io/Domingo-5-de-julio-del-2026---poema/"
+<style>
+
+/*=========================================
+SELLO DE CERA
+=========================================*/
+
+.seal-container{
+
+display:flex;
+
+justify-content:center;
+
+margin:45px 0 15px;
+
+}
+
+.wax-seal{
+
+width:165px;
+height:165px;
+
+border-radius:50%;
+
+text-decoration:none;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+text-align:center;
+
+padding:18px;
+
+font-family:'Cinzel',serif;
+
+font-size:.82rem;
+
+font-weight:700;
+
+letter-spacing:1px;
+
+color:#fff7ff;
+
+background:
+radial-gradient(circle at 35% 30%,
+#d88cff 0%,
+#a93fff 45%,
+#6d179f 75%,
+#4c0c74 100%);
+
+border:5px solid #f2d89d;
+
+box-shadow:
+0 12px 25px rgba(0,0,0,.35),
+inset 0 3px 10px rgba(255,255,255,.25),
+inset 0 -8px 15px rgba(0,0,0,.25);
+
+transition:.35s ease;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.wax-seal::before{
+
+content:"";
+
+position:absolute;
+
+width:210px;
+height:40px;
+
+background:rgba(255,255,255,.22);
+
+transform:rotate(-35deg);
+
+top:18px;
+left:-60px;
+
+}
+
+.wax-seal:hover{
+
+transform:scale(1.08) rotate(-2deg);
+
+box-shadow:
+0 20px 35px rgba(0,0,0,.45);
+
+}
+
+.ribbon{
+
+width:6px;
+
+height:95px;
+
+background:linear-gradient(#b3884d,#f4dca6,#b3884d);
+
+margin:0 auto;
+
+border-radius:5px;
+
+}
+
+.end-message{
+
+margin-top:28px;
+
+text-align:center;
+
+font-family:'Great Vibes',cursive;
+
+font-size:2.3rem;
+
+color:#7b4323;
+
+}
+
+.page-number{
+
+margin-top:40px;
+
+text-align:center;
+
+font-family:'Cinzel',serif;
+
+font-size:.95rem;
+
+letter-spacing:5px;
+
+color:#9a7742;
+
+}
+
+</style>
+
+<div class="seal-container">
+
+<a
+class="wax-seal"
 target="_blank"
-class="poem-btn">
+href="https://j8753741-eng.github.io/Domingo-5-de-julio-del-2026---poema/">
 
-💜 Leer el poema de esta noche
+📜<br>
+
+ABRIR EL<br>
+
+POEMA DE<br>
+
+ESTA NOCHE
 
 </a>
 
 </div>
 
-<div class="footer">
+<div class="ribbon"></div>
 
-Hecho con todo mi amor, únicamente para ti. ❤️
+<div class="end-message">
+
+<strong>
+Cada página de este libro siempre encontrará el camino de regreso hacia ti.
+</strong>
+
+</div>
+
+<div class="page-number">
+
+❦ &nbsp; I &nbsp; ❦
+
+</div>
 
 </div>
 
