@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>En esta noche de domingo, mi único lugar favorito sigue siendo a tu lado</title>
+<title>En esta noche de domingo</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -25,175 +26,156 @@ scroll-behavior:smooth;
 
 body{
 
-background:
-radial-gradient(circle at top,#342056 0%,#170d29 45%,#09060f 100%);
-
 font-family:'Montserrat',sans-serif;
+
+background:
+radial-gradient(circle at top,#53347e 0%,#2b1a46 35%,#140d22 70%,#09070f 100%);
+
+color:#f6f2ff;
+
 overflow-x:hidden;
-color:#f8f4ff;
+
 min-height:100vh;
+
 position:relative;
 
 }
 
-/*=========================
+/*==============================
 ESTRELLAS
-=========================*/
+==============================*/
 
 .stars{
+
 position:fixed;
-width:100%;
-height:100%;
-top:0;
-left:0;
-overflow:hidden;
+
+inset:0;
+
+pointer-events:none;
+
 z-index:-5;
-}
 
-.star{
-position:absolute;
-background:white;
-border-radius:50%;
-animation:twinkle linear infinite;
-opacity:.8;
-}
+background-image:
 
-.star:nth-child(1){width:2px;height:2px;top:8%;left:15%;animation-duration:4s;}
-.star:nth-child(2){width:3px;height:3px;top:18%;left:72%;animation-duration:5s;}
-.star:nth-child(3){width:2px;height:2px;top:30%;left:55%;animation-duration:6s;}
-.star:nth-child(4){width:2px;height:2px;top:70%;left:18%;animation-duration:5s;}
-.star:nth-child(5){width:3px;height:3px;top:80%;left:78%;animation-duration:4s;}
-.star:nth-child(6){width:2px;height:2px;top:42%;left:90%;animation-duration:7s;}
-.star:nth-child(7){width:2px;height:2px;top:55%;left:8%;animation-duration:6s;}
-.star:nth-child(8){width:3px;height:3px;top:10%;left:48%;animation-duration:5s;}
-.star:nth-child(9){width:2px;height:2px;top:90%;left:42%;animation-duration:7s;}
-.star:nth-child(10){width:3px;height:3px;top:60%;left:63%;animation-duration:4s;}
+radial-gradient(white 1px,transparent 1px),
+radial-gradient(#dcb7ff 1px,transparent 1px);
 
-@keyframes twinkle{
+background-size:90px 90px,140px 140px;
 
-0%,100%{
-opacity:.2;
-transform:scale(.7);
-}
+background-position:0 0,40px 60px;
 
-50%{
-opacity:1;
-transform:scale(1.4);
-}
+opacity:.55;
 
 }
 
-/*=========================
-AURORA
-=========================*/
-
-.aurora{
-
-position:fixed;
-width:800px;
-height:800px;
-
-background:
-radial-gradient(circle,
-rgba(199,117,255,.22),
-transparent 70%);
-
-top:-280px;
-right:-260px;
-
-filter:blur(30px);
-
-animation:aurora 18s ease-in-out infinite alternate;
-
-z-index:-4;
-
-}
-
-@keyframes aurora{
-
-from{
-transform:translateY(0px) rotate(0deg);
-}
-
-to{
-transform:translateY(80px) rotate(35deg);
-}
-
-}
-
-/*=========================
+/*==============================
 LUNA
-=========================*/
+==============================*/
 
 .moon{
 
 position:fixed;
 
-top:70px;
-right:80px;
+top:55px;
+right:65px;
 
-width:150px;
-height:150px;
+width:140px;
+height:140px;
 
 border-radius:50%;
 
 background:
-radial-gradient(circle,
-#fffef8,
-#efe7ff 65%,
-#d4bcff);
+radial-gradient(circle,#fffdfc,#f0e8ff 70%,#ceb7ff);
 
 box-shadow:
 
-0 0 40px #fff,
-0 0 90px #b97bff,
-0 0 180px rgba(180,110,255,.6);
+0 0 40px white,
+0 0 90px #c682ff,
+0 0 180px rgba(198,130,255,.45);
 
-animation:moonFloat 7s ease-in-out infinite;
+animation:moon 6s ease-in-out infinite;
 
-z-index:-3;
+z-index:-4;
 
 }
 
-@keyframes moonFloat{
+@keyframes moon{
 
 50%{
-transform:translateY(-12px);
-}
+
+transform:translateY(-10px);
 
 }
 
-/*=========================
+}
+
+/*==============================
+AURORA
+==============================*/
+
+.aurora{
+
+position:fixed;
+
+top:-220px;
+left:-220px;
+
+width:700px;
+height:700px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(circle,
+rgba(198,120,255,.22),
+transparent 70%);
+
+filter:blur(35px);
+
+animation:aurora 16s ease-in-out infinite alternate;
+
+z-index:-5;
+
+}
+
+@keyframes aurora{
+
+to{
+
+transform:
+translate(90px,40px)
+rotate(20deg);
+
+}
+
+}
+
+/*==============================
 CONTENEDOR
-=========================*/
+==============================*/
 
-.wrapper{
+.container{
 
-display:flex;
-justify-content:center;
-padding:70px 20px;
+width:min(920px,92%);
 
-}
+margin:70px auto;
 
-.letter{
+background:
 
-width:100%;
-max-width:930px;
+rgba(255,255,255,.09);
 
-background:rgba(255,255,255,.08);
+backdrop-filter:blur(18px);
 
-backdrop-filter:blur(16px);
+border-radius:34px;
 
-border:1px solid rgba(255,255,255,.14);
+border:1px solid rgba(255,255,255,.15);
 
-border-radius:38px;
-
-padding:70px;
+padding:70px 70px 60px;
 
 box-shadow:
 
-0 0 35px rgba(180,110,255,.20),
-0 25px 80px rgba(0,0,0,.55);
+0 20px 70px rgba(0,0,0,.45);
 
 position:relative;
 
@@ -201,19 +183,19 @@ overflow:hidden;
 
 }
 
-/* Brillo interno */
-
-.letter::before{
+.container::before{
 
 content:"";
 
 position:absolute;
 
-top:-120px;
-left:-120px;
+top:-160px;
+right:-140px;
 
 width:320px;
 height:320px;
+
+border-radius:50%;
 
 background:
 
@@ -223,48 +205,93 @@ transparent 70%);
 
 }
 
-/*=========================
-CABECERA
-=========================*/
+/*==============================
+ORNAMENTOS
+==============================*/
 
-.header{
+.corner{
+
+position:absolute;
+
+font-size:34px;
+
+opacity:.65;
+
+}
+
+.corner.one{
+
+top:25px;
+left:28px;
+
+}
+
+.corner.two{
+
+top:25px;
+right:28px;
+
+}
+
+.corner.three{
+
+bottom:25px;
+left:28px;
+
+}
+
+.corner.four{
+
+bottom:25px;
+right:28px;
+
+}
+
+/*==============================
+ENCABEZADO
+==============================*/
+
+header{
 
 text-align:center;
-margin-bottom:60px;
+
+margin-bottom:55px;
 
 }
 
-.header .icon{
+header .heart{
 
-font-size:58px;
-margin-bottom:18px;
+font-size:50px;
 
-animation:heartbeat 2.5s infinite;
+margin-bottom:15px;
+
+animation:pulse 2.8s infinite;
 
 }
 
-@keyframes heartbeat{
+@keyframes pulse{
 
 50%{
+
 transform:scale(1.15);
-}
 
 }
 
-.header h1{
+}
+
+header h1{
 
 font-family:'Cinzel',serif;
 
-font-size:2.4rem;
+font-size:2.2rem;
 
 line-height:1.45;
 
-color:#fff;
+color:white;
 
 text-shadow:
 
-0 0 15px #b87fff,
-0 0 35px rgba(197,134,255,.8);
+0 0 18px #c97cff;
 
 margin-bottom:25px;
 
@@ -274,447 +301,208 @@ margin-bottom:25px;
 
 display:inline-block;
 
-padding:12px 28px;
+padding:11px 26px;
 
-border-radius:50px;
+border-radius:40px;
 
-background:rgba(178,115,255,.14);
+background:rgba(185,120,255,.12);
 
 border:1px solid rgba(255,255,255,.16);
 
 font-size:.95rem;
 
-letter-spacing:1px;
-
-color:#efe6ff;
-
 }
 
-/*=========================
+/*==============================
 SALUDO
-=========================*/
+==============================*/
 
-.saludo{
+.greeting{
 
 font-family:'Great Vibes',cursive;
 
 font-size:3rem;
 
-text-align:center;
+text-align:left;
 
-margin:55px 0 40px;
+color:#ffdfff;
 
-color:#ffd8ff;
+margin-bottom:35px;
 
 text-shadow:
 
-0 0 18px rgba(255,190,255,.75);
+0 0 18px rgba(255,180,255,.6);
 
 }
 
-/*=========================
-PARRAFOS
-=========================*/
+/*==============================
+PÁRRAFOS
+==============================*/
 
 p{
 
 font-size:1.12rem;
 
-line-height:2.15;
+line-height:2.1;
 
 text-align:justify;
 
-margin-bottom:30px;
+margin-bottom:22px;
 
-color:#f5edff;
+color:#f6f3ff;
 
 }
 
 strong{
 
-color:#ffffff;
 font-weight:700;
+
+color:white;
 
 }
 
-/*=========================
-SEPARADOR
-=========================*/
+/*==============================
+LETRA CAPITAL
+==============================*/
 
-.separator{
+.first-letter::first-letter{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:4.8rem;
+
+float:left;
+
+line-height:.9;
+
+padding-right:10px;
+
+padding-top:8px;
+
+color:#f8d5ff;
+
+text-shadow:
+
+0 0 18px #cb81ff;
+
+}
+
+/*==============================
+SEPARADOR
+==============================*/
+
+.divider{
 
 display:flex;
-align-items:center;
+
 justify-content:center;
+
+align-items:center;
 
 margin:40px 0;
 
 }
 
-.separator span{
-
-font-size:28px;
-
-margin:0 18px;
-
-animation:heartbeat 3s infinite;
-
-}
-
-.separator::before,
-.separator::after{
+.divider::before,
+.divider::after{
 
 content:"";
 
 height:1px;
-width:150px;
+
+width:180px;
 
 background:
 
 linear-gradient(to right,
 transparent,
-#d79bff,
+#cf92ff,
 transparent);
 
 }
 
+.divider span{
+
+margin:0 18px;
+
+font-size:22px;
+
+}
 </style>
+
 </head>
 
 <body>
 
-<div class="stars">
-
-<div class="star"></div>
-<div class="star"></div>
-<div class="star"></div>
-<div class="star"></div>
-<div class="star"></div>
-<div class="star"></div>
-<div class="star"></div>
-<div class="star"></div>
-<div class="star"></div>
-<div class="star"></div>
-
-</div>
+<div class="stars"></div>
 
 <div class="aurora"></div>
 
 <div class="moon"></div>
 
-<div class="wrapper">
+<div class="container">
 
-<div class="letter">
+<div class="corner one">❀</div>
+<div class="corner two">❀</div>
+<div class="corner three">❀</div>
+<div class="corner four">❀</div>
 
-<div class="header">
+<header>
 
-<div class="icon">💜</div>
+<div class="heart">💜</div>
 
 <h1>
-<strong>EN ESTA NOCHE DE DOMINGO,<br>
+
+<strong>
+EN ESTA NOCHE DE DOMINGO,<br>
 MI ÚNICO LUGAR FAVORITO<br>
-SIGUE SIENDO A TU LADO</strong>
+SIGUE SIENDO A TU LADO
+</strong>
+
 </h1>
 
 <div class="date">
+
 <strong>Domingo, 5 de julio de 2026 — Noche</strong>
-</div>
 
 </div>
 
-<div class="saludo">
-Mi niña hermosa:
+</header>
+
+<div class="greeting">
+
+<strong>Mi niña hermosa:</strong>
+
 </div>
 
-<p>
+<p class="first-letter">
 Esta noche, mientras recuerdo cada instante que vivimos hoy, solo puedo sonreír. Quizá para muchas personas haya sido una salida sencilla: una película, algo para comer y unas cuantas horas compartidas. Pero para mí fue mucho más que eso. Fue otro recuerdo contigo, otro pedacito de vida que guardaré con muchísimo cariño.
 </p>
-
-<div class="separator">
-<span>🤍</span>
-</div>
 
 <p>
 Me gustó verte disfrutar, escuchar tu voz, sentir tu presencia tan cerca de la mía. Y aunque en algunos momentos pensé que todo podría haber sido todavía más especial, no quiero que eso opaque lo verdaderamente importante: tuve el privilegio de pasar el día junto a la mujer que amo.
 </p>
 
-<div class="separator">
-<span>🌙</span>
-</div>
-
 <p>
 Hubo un momento que se quedó grabado en mi corazón. Poder acariciar suavemente tu pierna, sentir la calidez de tu piel y saber que estabas ahí conmigo hizo que mi corazón latiera con una intensidad difícil de explicar. No voy a negar que mi corazón también deseaba abrazarte de una manera aún más cercana, perderme un poco más en ti y recorrer con ternura esos rincones tuyos que tanto me enamoran. Pero entendí que no siempre se puede tener todo lo que uno desea, y está bien.
-  </p>
+</p>
 
-<style>
-
-/*====================================
-CONSTELACIÓN EN FORMA DE CORAZÓN
-====================================*/
-
-.constellation{
-
-position:absolute;
-
-top:520px;
-right:40px;
-
-width:180px;
-height:180px;
-
-pointer-events:none;
-
-opacity:.35;
-
-}
-
-.constellation span{
-
-position:absolute;
-
-width:5px;
-height:5px;
-
-background:#fff;
-
-border-radius:50%;
-
-box-shadow:
-0 0 10px #fff,
-0 0 20px #c983ff;
-
-animation:twinkle 4s infinite;
-
-}
-
-/* corazón */
-
-.constellation span:nth-child(1){top:25px;left:88px;}
-.constellation span:nth-child(2){top:12px;left:65px;}
-.constellation span:nth-child(3){top:12px;left:110px;}
-.constellation span:nth-child(4){top:32px;left:48px;}
-.constellation span:nth-child(5){top:32px;left:128px;}
-.constellation span:nth-child(6){top:60px;left:40px;}
-.constellation span:nth-child(7){top:60px;left:138px;}
-.constellation span:nth-child(8){top:90px;left:55px;}
-.constellation span:nth-child(9){top:112px;left:72px;}
-.constellation span:nth-child(10){top:132px;left:88px;}
-.constellation span:nth-child(11){top:112px;left:104px;}
-.constellation span:nth-child(12){top:90px;left:122px;}
-
-/*====================================
-LÍNEAS DE LA CONSTELACIÓN
-====================================*/
-
-.constellation svg{
-
-position:absolute;
-width:180px;
-height:180px;
-
-}
-
-.constellation line{
-
-stroke:#d9a4ff;
-stroke-width:1.2;
-opacity:.45;
-
-}
-
-/*====================================
-PÉTALOS LUMINOSOS
-====================================*/
-
-.petals{
-
-position:fixed;
-
-top:0;
-left:0;
-
-width:100%;
-height:100%;
-
-pointer-events:none;
-
-overflow:hidden;
-
-z-index:-2;
-
-}
-
-.petal{
-
-position:absolute;
-
-font-size:18px;
-
-opacity:.55;
-
-animation:fall linear infinite;
-
-}
-
-.petal:nth-child(1){
-
-left:8%;
-animation-duration:14s;
-animation-delay:-3s;
-
-}
-
-.petal:nth-child(2){
-
-left:24%;
-animation-duration:16s;
-animation-delay:-8s;
-
-}
-
-.petal:nth-child(3){
-
-left:43%;
-animation-duration:18s;
-animation-delay:-4s;
-
-}
-
-.petal:nth-child(4){
-
-left:67%;
-animation-duration:15s;
-animation-delay:-10s;
-
-}
-
-.petal:nth-child(5){
-
-left:88%;
-animation-duration:17s;
-animation-delay:-6s;
-
-}
-
-@keyframes fall{
-
-0%{
-
-transform:
-translateY(-120px)
-rotate(0deg);
-
-opacity:0;
-
-}
-
-10%{
-
-opacity:.6;
-
-}
-
-100%{
-
-transform:
-translateY(120vh)
-rotate(360deg);
-
-opacity:0;
-
-}
-
-}
-
-/*====================================
-FIRMA PREVIA
-====================================*/
-
-.signature-space{
-
-margin-top:35px;
-
-padding-top:15px;
-
-border-top:1px solid rgba(255,255,255,.12);
-
-}
-
-</style>
-
-<!-- Constelación -->
-
-<div class="constellation">
-
-<svg viewBox="0 0 180 180">
-
-<line x1="88" y1="25" x2="65" y2="12"/>
-<line x1="88" y1="25" x2="110" y2="12"/>
-<line x1="65" y1="12" x2="48" y2="32"/>
-<line x1="110" y1="12" x2="128" y2="32"/>
-<line x1="48" y1="32" x2="40" y2="60"/>
-<line x1="128" y1="32" x2="138" y2="60"/>
-<line x1="40" y1="60" x2="55" y2="90"/>
-<line x1="138" y1="60" x2="122" y2="90"/>
-<line x1="55" y1="90" x2="72" y2="112"/>
-<line x1="122" y1="90" x2="104" y2="112"/>
-<line x1="72" y1="112" x2="88" y2="132"/>
-<line x1="104" y1="112" x2="88" y2="132"/>
-
-</svg>
-
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-
+<div class="divider">
+<span>🤍</span>
 </div>
-
-<!-- Pétalos -->
-
-<div class="petals">
-
-<div class="petal">🌸</div>
-<div class="petal">💮</div>
-<div class="petal">🌸</div>
-<div class="petal">💮</div>
-<div class="petal">🌸</div>
-
-</div>
-
-<div class="separator">
-<span>💜</span>
-</div>
-
 <p>
 Porque si algo he aprendido contigo es que el amor también sabe esperar. El deseo que siento por ti no desaparece cuando no puede cumplirse; al contrario, se transforma en ilusión, en paciencia y en más ganas de seguir construyendo momentos hermosos contigo. Sé que llegarán muchas otras noches, muchas otras citas y muchísimas oportunidades para seguir descubriéndonos poco a poco.
 </p>
-
-<div class="separator">
-<span>✨</span>
-</div>
 
 <p>
 Hoy confirmé algo que ya sabía: no necesito un plan extraordinario para ser feliz. Si tú estás conmigo, incluso el silencio se vuelve un recuerdo precioso. Una película puede convertirse en la mejor experiencia simplemente porque mi mano puede buscar la tuya, porque puedo mirar de reojo a la mujer que hace que mis días tengan un brillo diferente.
 </p>
 
-<div class="separator">
-<span>🤍</span>
-</div>
-
 <p>
 Gracias por regalarme este domingo. Gracias por dejarme acompañarte, por hacerme sentir afortunado de caminar a tu lado y por seguir despertando en mí un amor que cada día es más profundo, más intenso y más apasionado.
 </p>
 
-<div class="separator">
+<div class="divider">
 <span>🌙</span>
 </div>
 
@@ -722,203 +510,189 @@ Gracias por regalarme este domingo. Gracias por dejarme acompañarte, por hacerm
 Espero que esta noche descanses con una sonrisa, porque mientras tú duermas, yo seguiré pensando en lo hermosa que eres, en lo mucho que te extraño incluso después de haber pasado el día contigo y en todas las historias maravillosas que aún nos faltan por vivir.
 </p>
 
-<div class="separator">
-<span>❤️</span>
-</div>
-
 <p>
 Te amo con toda mi alma, con todo mi corazón y con un deseo inmenso de seguir escribiendo nuestra historia, un domingo, una noche y un abrazo a la vez.
 </p>
 
-<div class="signature-space">
+<div style="margin-top:55px;text-align:right;">
 
+<div style="
+font-family:'Great Vibes',cursive;
+font-size:2.8rem;
+color:#ffe3ff;
+text-shadow:0 0 18px rgba(255,180,255,.55);
+margin-bottom:12px;
+">
+
+<strong>Con todo mi amor,</strong>
+
+</div>
+
+<div style="
+font-size:1.1rem;
+line-height:2;
+color:#f8f4ff;
+max-width:470px;
+margin-left:auto;
+">
+
+<strong>
+Tu niño que siempre soñará con volver a perderse entre tus abrazos y encontrarse, una y otra vez, en tu corazón. ❤️
+</strong>
+
+</div>
+
+</div>
+
+<div class="divider">
+<span>💜</span>
+</div>
 
 <style>
 
-/*====================================
-FIRMA
-====================================*/
+/*=========================================
+FRASE FINAL EN NEÓN
+=========================================*/
 
-.signature{
+.neon-love{
 
-text-align:center;
-margin-top:45px;
+margin:55px auto 45px;
 
-}
+max-width:760px;
 
-.signature .love{
-
-font-family:'Great Vibes',cursive;
-font-size:2.8rem;
-color:#ffe5ff;
-
-text-shadow:
-0 0 18px rgba(255,210,255,.9);
-
-margin-bottom:12px;
-
-}
-
-.signature .name{
-
-font-size:1.15rem;
-letter-spacing:1px;
-color:#f5eeff;
-
-}
-
-/*====================================
-FRASE FINAL NEÓN
-====================================*/
-
-.neon-message{
-
-margin:70px auto 55px;
-
-max-width:780px;
+padding:30px;
 
 text-align:center;
 
-font-family:'Comfortaa',sans-serif;
+font-family:'Cormorant Garamond',serif;
 
-font-size:1.45rem;
+font-size:1.65rem;
 
-line-height:2.1;
+line-height:1.9;
 
-color:#f7e9ff;
+color:#fdf7ff;
 
-padding:28px;
+background:rgba(173,103,255,.08);
 
-border-radius:24px;
+border:1px solid rgba(215,170,255,.18);
 
-background:rgba(170,90,255,.08);
-
-border:1px solid rgba(210,160,255,.18);
+border-radius:26px;
 
 box-shadow:
-0 0 18px rgba(183,110,255,.25),
-0 0 45px rgba(183,110,255,.18);
+0 0 20px rgba(171,92,255,.22),
+0 0 50px rgba(171,92,255,.15);
 
-animation:neonGlow 3.5s ease-in-out infinite alternate;
+animation:neon 3s ease-in-out infinite alternate;
 
 }
 
-@keyframes neonGlow{
+@keyframes neon{
 
 from{
 
 text-shadow:
-0 0 6px #ffffff,
-0 0 14px #d68cff,
-0 0 24px #b45cff,
-0 0 38px #9d3cff;
+0 0 6px #fff,
+0 0 12px #d79cff,
+0 0 24px #b96cff,
+0 0 38px #9d4dff;
 
 }
 
 to{
 
 text-shadow:
-0 0 10px #ffffff,
-0 0 22px #e0b1ff,
-0 0 40px #c26cff,
-0 0 70px #9333ff;
+0 0 10px #fff,
+0 0 22px #efcbff,
+0 0 42px #cb84ff,
+0 0 70px #963dff;
 
 }
 
 }
 
-/*====================================
+/*=========================================
 BOTÓN
-====================================*/
+=========================================*/
 
-.button-area{
+.button-box{
 
 display:flex;
+
 justify-content:center;
-margin-top:20px;
-margin-bottom:30px;
+
+margin-top:25px;
 
 }
 
-.poem-button{
+.poem-btn{
 
 display:inline-flex;
+
 align-items:center;
+
 gap:12px;
 
-padding:18px 36px;
+padding:18px 34px;
 
 border-radius:60px;
 
 text-decoration:none;
 
-font-weight:700;
+font-family:'Montserrat',sans-serif;
+
+font-weight:600;
 
 font-size:1rem;
 
-font-family:'Montserrat',sans-serif;
+color:#fff;
 
-color:white;
-
-background:linear-gradient(135deg,#8e2de2,#c04dff,#7f5cff);
+background:linear-gradient(135deg,#7f3cff,#b55bff,#8c52ff);
 
 box-shadow:
-0 10px 35px rgba(157,60,255,.45);
+0 12px 35px rgba(146,70,255,.45);
 
 transition:.35s;
 
 }
 
-.poem-button:hover{
+.poem-btn:hover{
 
-transform:translateY(-6px) scale(1.03);
+transform:translateY(-5px);
 
 box-shadow:
-0 18px 45px rgba(170,70,255,.6);
+0 18px 45px rgba(146,70,255,.65);
 
 }
 
 .footer{
 
 margin-top:45px;
+
 text-align:center;
 
-font-size:.9rem;
-color:#dccbff;
+font-size:.92rem;
 
-opacity:.85;
+color:#ddd1f5;
 
 }
 
 </style>
 
-<div class="signature">
-
-<div class="love">
-<strong>Con todo mi amor,</strong>
-</div>
-
-<div class="name">
-<strong>Tu niño que siempre soñará con volver a perderse entre tus abrazos y encontrarse, una y otra vez, en tu corazón. ❤️</strong>
-</div>
-
-</div>
-
-<div class="neon-message">
+<div class="neon-love">
 
 <strong>
-Y si algún día vuelvo a preguntarle a la vida cuál es el lugar donde verdaderamente descansa mi corazón, jamás miraré un mapa ni señalaré un destino; cerraré los ojos, recordaré esta noche de domingo y volveré a elegir el mismo refugio de siempre: tus abrazos, tu mirada y el inmenso privilegio de amarte, hoy, mañana y durante todas las noches que el universo quiera regalarme a tu lado, mi eterna y maravillosa <br><br>VALERIA PETRO VILLAZÓN.
+Si esta noche tuviera que pedir un único deseo, no sería volver a ver una película, ni regresar a un lugar especial, ni detener el tiempo. Pediría seguir viviendo domingos como este, donde el mayor regalo sea contemplar tu sonrisa, sentir tu cercanía y descubrir que incluso los instantes más sencillos se convierten en recuerdos eternos cuando los vivo contigo. Porque mi verdadero destino nunca ha sido un lugar, sino el inmenso privilegio de caminar a tu lado, de esperarte cuando haga falta, de abrazarte cuando la vida lo permita y de seguir enamorándome de ti una y otra vez, hasta que cada latido pronuncie para siempre un solo nombre: <br><br>VALERIA PETRO VILLAZÓN.
 </strong>
 
 </div>
 
-<div class="button-area">
+<div class="button-box">
 
-<a href="PEGA_AQUÍ_EL_ENLACE_DEL_POEMA"
+<a href="https://j8753741-eng.github.io/Domingo-5-de-julio-del-2026---poema/"
 target="_blank"
-class="poem-button">
+class="poem-btn">
 
-💜 Nuestro poema de esta noche
+💜 Leer el poema de esta noche
 
 </a>
 
@@ -926,13 +700,12 @@ class="poem-button">
 
 <div class="footer">
 
-Hecho con todo mi amor para la mujer más especial de mi universo.
-
-</div>
+Hecho con todo mi amor, únicamente para ti. ❤️
 
 </div>
 
 </div>
 
 </body>
-  </html>
+
+</html>
